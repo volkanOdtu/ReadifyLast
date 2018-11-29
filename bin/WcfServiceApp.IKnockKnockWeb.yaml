@@ -1,0 +1,109 @@
+﻿swagger: '2.0'
+info:
+  title: IKnockKnockWeb
+  version: "1.0.0.0"
+host: localhost
+schemes:
+  - http
+  - https
+basePath: /IKnockKnockWeb
+paths:
+  /Fibonacci:
+    get:
+      summary: Fibonacci
+      consumes:
+        - application/xml
+      produces:
+        - application/json
+      parameters:
+        - name: n
+          in: query
+          required: true
+          type: "number"
+          format: int32
+      tags:
+        - IKnockKnockWeb
+      responses:
+        200:
+          description: OK
+          schema:
+            type: "number"
+            format: int32
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /reverse:
+    get:
+      summary: reverse
+      consumes:
+        - application/xml
+      produces:
+        - application/json
+      parameters:
+        - name: sentence
+          in: query
+          required: false
+          type: "string"
+      tags:
+        - IKnockKnockWeb
+      responses:
+        200:
+          description: OK
+          schema:
+            type: "string"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /getToken:
+    get:
+      summary: getToken
+      consumes:
+        - application/xml
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+          schema:
+            type: "string"
+        default:
+          description: failed
+          schema:
+            type: "string"
+  /TriangleType:
+    get:
+      summary: TriangleType
+      consumes:
+        - application/xml
+      produces:
+        - application/json
+      parameters:
+        - name: a
+          in: query
+          required: true
+          type: "number"
+          format: int32
+        - name: b
+          in: query
+          required: true
+          type: "number"
+          format: int32
+        - name: c
+          in: query
+          required: true
+          type: "number"
+          format: int32
+      tags:
+        - IKnockKnockWeb
+      responses:
+        200:
+          description: OK
+          schema:
+            type: "string"
+        default:
+          description: failed
+          schema:
+            type: "string"
+definitions:
